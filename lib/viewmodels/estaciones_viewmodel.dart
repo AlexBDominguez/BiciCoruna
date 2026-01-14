@@ -10,7 +10,10 @@ enum EstacionesState {
 }
 
 class EstacionesViewModel extends ChangeNotifier {
-  final EstacionesRepository _repository = EstacionesRepository();
+  final EstacionesRepository _repository;
+
+EstacionesViewModel({EstacionesRepository? repository})
+      : _repository = repository ?? EstacionesRepository();
 
   //Estado actual
   EstacionesState _state = EstacionesState.initial;
