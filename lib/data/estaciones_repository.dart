@@ -9,13 +9,17 @@ class EstacionesRepository {
   static const String _stationStatusUrl =
       'https://acoruna.publicbikesystem.net/customer/gbfs/v2/gl/station_status';
 
+      final http.Client _client;
+
+      EstacionesRepository({http.Client? client}) : _client = client ?? http.Client();
+
   // Obtiene todas las estaciones con la info completa
   Future<List<Estacion>> getEstaciones() async {
     try {
       // Hacer ambas peticiones en paralelo
       final responses = await Future.wait([
-        http.get(Uri.parse(_stationInfoUrl)),
-        http.get(Uri.parse(_stationStatusUrl)),
+        _client.get(Uri.parse(_stationInfoUrl)),
+        _client.get(Uri.parse(_stationStatusUrl)),
       ]);
 
       final infoResponse = responses[0];
