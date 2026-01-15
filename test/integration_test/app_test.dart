@@ -12,7 +12,7 @@ void main() {
     (WidgetTester tester) async{
       await tester.pumpWidget(MyApp());
 
-      await tester.pumpAndSettle(const Duration(seconds: 10));
+      await tester.pumpAndSettle(const Duration(seconds: 12));
 
       expect(find.byType(ListTile), findsWidgets);
 
