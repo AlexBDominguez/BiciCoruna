@@ -33,8 +33,7 @@ class Estacion {
     required this.isInstalled,
     required this.isRenting,
     required this.isReturning,
-    this.vehicleTypesAvailable = const {},
-  });
+    this.vehicleTypesAvailable = const {}});
 
   // Factory para crear desde station_information
   factory Estacion.fromStationInformation(Map<String, dynamic> json) {

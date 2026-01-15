@@ -20,7 +20,6 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Detalles de la Estación'), findsOneWidget);
-
       expect(find.byIcon(Icons.directions_bike), findsWidgets);
     },
   );

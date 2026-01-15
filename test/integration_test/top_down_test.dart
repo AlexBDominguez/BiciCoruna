@@ -4,7 +4,7 @@ import 'package:bici_coruna/viewmodels/estaciones_viewmodel.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-class MockEstacionesRepository extends Mock implements EstacionesRepository {
+class MockEstacionesRepository extends Mock implements EstacionesRepository {}
   void main() {
     late MockEstacionesRepository mockRepository;
     late EstacionesViewModel viewModel;
@@ -32,7 +32,7 @@ class MockEstacionesRepository extends Mock implements EstacionesRepository {
             isInstalled: true,
             isRenting: true,
             isReturning: true,
-            
+
           ),
         ];
         // Simulamos respuesta correcta del repositorio
@@ -50,4 +50,4 @@ class MockEstacionesRepository extends Mock implements EstacionesRepository {
       },
     );
   }
-}
+

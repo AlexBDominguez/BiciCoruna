@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:bici_coruna/models/estacion.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mocktail/mocktail.dart';
@@ -7,10 +6,15 @@ import 'package:bici_coruna/data/estaciones_repository.dart';
 
 class MockHttpClient extends Mock implements http.Client {}
 
+class FakeUri extends Fake implements Uri {}
 
 void main(){
   late MockHttpClient mockClient;
   late EstacionesRepository repository;
+
+  setUpAll((){
+    registerFallbackValue(Uri.parse('http://example.com'));
+  });
 
   setUp((){
     mockClient = MockHttpClient();
