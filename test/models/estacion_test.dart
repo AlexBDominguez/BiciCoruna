@@ -40,8 +40,8 @@ void main(){
         'is_renting': 1,
         'is_returning': 1,
         'vehicle_types_available': [
-          {'vehicle_type_id': 'bike', 'count': 5},
-          {'vehicle_type_id': 'ebike', 'count': 0},
+          {'vehicle_type_id': 'bike', 'count': 3},
+          {'vehicle_type_id': 'ebike', 'count': 2},
         ],
       };
       final estacionCompleta = estacionBase.mergeWithStatus(statusJson);

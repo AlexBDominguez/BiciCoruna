@@ -12,14 +12,14 @@ void main() {
     (WidgetTester tester) async{
       await tester.pumpWidget(MyApp());
 
-      await tester.pumpAndSettle(const Duration(seconds: 12));
+      await tester.pumpAndSettle(const Duration(seconds: 10));
 
       expect(find.byType(ListTile), findsWidgets);
 
       await tester.tap(find.byType(ListTile).first);
       await tester.pumpAndSettle();
 
-      expect(find.text('Detalles de la Estación'), findsOneWidget);
+      expect(find.text('Detalle de Estación'), findsOneWidget);
       expect(find.byIcon(Icons.directions_bike), findsWidgets);
     },
   );

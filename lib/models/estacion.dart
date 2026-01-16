@@ -91,8 +91,16 @@ class Estacion {
   }
 
   // Getters para tipos de bicis
-  int get numElectricBikes => vehicleTypesAvailable['electric'] ?? 0;
-  int get numMechanicalBikes => vehicleTypesAvailable['mechanical'] ?? 0;
+  int get numElectricBikes =>
+    vehicleTypesAvailable['ebike'] ??
+    vehicleTypesAvailable['electric'] ??
+    0;
+
+int get numMechanicalBikes =>
+    vehicleTypesAvailable['bike'] ??
+    vehicleTypesAvailable['mechanical'] ??
+    0;
+
 
   Map<String, dynamic> toJson() {
     return {
